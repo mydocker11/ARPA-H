@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: rgb(24, 37, 52)">
+    <div id="text" style="font-size: 32px; color:white;  font-family:Segoe UI;" style=text-align:center;>
+        <span class="emoji">👋</span>
+
+
+    </div>
+    <Script type="text/javascript">
+        var hour = new Date().getHours();
+        var weltype = ['Good Morning', 'Good Afternoon', 'Good Evening'];
+        let weltext = '';
+        if (hour < 12) weltext = weltype[0];
+        else if (hour < 17) weltext = weltype[1];
+        else weltext = weltype[2];
+
+        var i = 0, text
+        text = weltext + "  " + _spPageContextInfo.userDisplayName
+
+
+        function typing() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i)
+                i++
+                setTimeout(typing, 135)
+            }
+        }
+        typing()
+    </Script>
+</body>
+
+</html>
